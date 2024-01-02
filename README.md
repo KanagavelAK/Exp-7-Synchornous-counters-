@@ -1,3 +1,5 @@
+## Name: Kanagavel A K
+## Register number: 212223230096
 # Exp-6-Synchornous-counters - up counter and down counter 
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
@@ -53,36 +55,61 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+## Developed by: Kanagavel A K
+## RegisterNumber: 212223230096
+## UP COUNTER
+```
+module upCounters(clk, A);
+input clk;
+output reg [2:0]A;
+always @(posedge clk)
+begin
+   A[2]=(((A[0])&(A[1]))^A[2]);
+   A[1]=(A[0])^A[1];
+   A[0]=A[0]^1;
+end
+endmodule
+```
+## DOWN COUNTER
+```
+module downCounters(clk,A);
+input clk;
+output reg [2:0]A;
+always @(posedge clk)
+begin
+   A[2]=(((~A[0])&(~A[1]))^A[2]);
+   A[1]=(~A[0])^A[1];
+   A[0]=1^A[0];
+end 
+endmodule
+```
 */
-
-
-
-
-
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
+## UP COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/968af674-eca7-432a-b96c-cefa74763071)
 
-
-
-
-
-
+## DOWN COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/3b831878-8543-488f-94e1-c08b07216aa8)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+## UP COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/275cdb25-fbc2-464a-a2fa-2061c5b0ef6a)
 
-
-
+## DOWN COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/5b20d05d-1701-42c5-abe5-7127a2b597b0)
 
 
 ### TRUTH TABLE 
+## UP COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/ca6da396-190b-443e-bef5-19cef7382fda)
 
-
-
+## DOWN COUNTER
+![image](https://github.com/KanagavelAK/Exp-7-Synchornous-counters-/assets/151514454/9ec146b9-927a-4b18-b270-b07f90d256f4)
 
 
 
 ### RESULTS 
+Thus , the 3-bit up and down counter is implemented successfully.
